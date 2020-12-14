@@ -1,0 +1,71 @@
+drop table if exists ‘LmonkeyUser‘;
+
+create table ‘LmonkeyUser‘(
+			USER_ID varchar(32) not null,
+			USER_NAME varchar(32) not null,
+			USER_PASSWORD varchar(20) not null,
+			USER_SEX varchar(1) not null,
+			USER_BIRTHDAY datetime default null,
+			USER_IDENITY_CODE varchar(60) default null,
+			USER_EMAIL varchar(60) default null,
+			USER_PHONE varchar(11) default null,
+			USER_ADDRESS varchar(200) default null,
+			USER_STATUS decimal(6,0) not null,
+			primary key('USER_ID')
+)ENGINE=InnoDB default charset=utf8;
+
+CREATE TABLE IF NOT EXISTS `LmonkeyUser`(
+			USER_ID varchar(32) not null,
+			USER_NAME varchar(32) not null,
+			USER_PASSWORD varchar(20) not null,
+			USER_SEX varchar(1) not null,
+			USER_BIRTHDAY datetime default null,
+			USER_IDENITY_CODE varchar(60) default null,
+			USER_EMAIL varchar(60) default null,
+			USER_PHONE varchar(11) default null,
+			USER_ADDRESS varchar(200) default null,
+			USER_STATUS decimal(6,0) not null,   
+			PRIMARY KEY ( `USER_ID` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `Lmonkey_category`(
+			CATE_ID INT(10) not null AUTO_INCREMENT,
+			CATE_NAME varchar(32) not null,
+			CATE_PARENT_ID decimal(10,0) not null,   
+			PRIMARY KEY ( `CATE_ID` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `lmonkey_product`(
+			PRODUCT_ID int(10) not null AUTO_INCREMENT,
+			PRODUCT_NAME varchar(128) not null,
+			PRODUCT_DESCRIPTION varchar(512) default null,
+			PRODUCT_PRICE decimal(10,2) not null,
+			PRODUCT_STOCK decimal(10,2) default null,
+			PRODUCT_FID decimal(10,2) default null,
+			PRODUCT_CID decimal(10,2) default null,
+			PRODUCT_FILENAME varchar(200) default null, 
+			PRIMARY KEY ( `PRODUCT_ID` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+//图像拼接数据库
+CREATE TABLE IF NOT EXISTS `IMAGESTICHING`(
+			IMAGE_ID int(10) not null AUTO_INCREMENT,
+			IMAGE_ONE_FILE varchar(100) not null,
+			IMAGE_ONE_DESCRIPTION varchar(200) default null,
+			IMAGE_TWO_FILE varchar(100) not null,
+			IMAGE_TWO_DESCRIPTION varchar(200) default null,
+			IMAGE_RESULT varchar(200) default null, 
+			PRIMARY KEY ( `IMAGE_ID` )
+)ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+
+
+
+
+
